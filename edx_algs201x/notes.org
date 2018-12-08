@@ -1,0 +1,30 @@
+#+TITLE: Notes
+* Arrays
+  |           | Add  | Remove | Access |
+  |-----------+------+--------+--------|
+  | Beginning | O(n) | O(n)   | O(1)   |
+  | Middle    | O(1) | O(1)   | O(1)   |
+  | End       | O(n) | O(n)   | O(1)   |
+  - Row-indexing - on the stack, for a multi-dimensional array,
+    the columns are incremented first i.e. (1,1) (1,2) (1,3) (2,1)
+    (2,2). This may depend on the compiler?
+    
+    The reverse would be column-major indexing i.e. (1,1,1) (2,1,1)
+    (3,1,1), the first index changes most rapidly.
+
+  - Constant-time access to any element.
+  - Constant-time read/write to the end of an array.
+  - Linear time to read/write to an arbitrary location.
+
+* Linked Lists
+  Singly-Linked Lists
+  - Only has the next pointer.
+  - Can have a tail to reference last element.
+  - Popping last element is O(n) time since we have no reference to
+    previous element from tail.
+
+  Doubly-Linked Lists
+  - Constant time to insert at or remove from the front.
+  - Constant time to insert/remove from the back.
+  - O(n) time to find arbitrary element.
+  - Constant time to insert between nodes or to remove a node.
