@@ -7,10 +7,15 @@
 #define SetBit(A,k) (A[(k/32)] |= (1 << (k%32)))
 #define IsPrime(A,k) ((A[(k/32)] & (1 << (k%32))) == 0 ? 1 : 0)
 
+void set_bit(int n)
+{
+    
+}
 void clear_all()
 {
     seg *current = head;
     while (current != NULL) {
+	//memset(*current.bits, 0, sizeof(BITS_PER_SEG));
 	memset(*current.bits, 0, sizeof(BITS_PER_SEG));
 	current = current->next;
     }
@@ -21,10 +26,10 @@ void sieve_of_e(int n)
 
     // 0 & 1 are not candidates
     SetBit(prime,1);
-    for (i = 2; i <= n; i=i+2)
-	SetBit(prime,k);
+    // Adding 2 since we only care about odds
+    SetBit(prime,2);
 
-    for (i = 3; i <= n; i=i+2)
+    for (i = 2; i <= n; i=i+2)
 	if (IsPrime(prime,i)) 
 	    for (k = i*2; k <= n; k=k+i)
 		SetBit(prime,k);
@@ -50,4 +55,9 @@ void print_primes(int k1, int k2, int n)
 	    spotted++;
     }
     putchar('\n');
+}
+
+void factor(int inp)
+{
+
 }

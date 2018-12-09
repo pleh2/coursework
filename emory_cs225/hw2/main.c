@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include "header.h"
 
-unsigned int prime[MAX];
 
 int main(int argc, char **argv)
 {
-    int inp, n, total = 0;
+    int i, inp, n, total = 0;
+    seg *p;
+    
     if (argc != 2) {
 	fprintf(stderr, "Usage: %s N\n", argv[0]);
 	exit(1);
